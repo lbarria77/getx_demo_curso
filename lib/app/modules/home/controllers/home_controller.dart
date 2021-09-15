@@ -42,8 +42,11 @@ class HomeController extends GetxController {
     update(['text']);
   }
 
-  showUSerProfile(User user) {
-    Get.to(() => ProfileView(), arguments: user,
+  Future<void> showUSerProfile(User user) async {
+    final result = await Get.to<String>(() => ProfileView(), arguments: user,
     );
+    if (result != null) {
+      print('result $result');
+    }
   }
 }

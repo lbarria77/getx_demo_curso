@@ -4,6 +4,8 @@ import 'package:getx_demo_curso/app/modules/home/bindings/home_binding.dart';
 import 'package:getx_demo_curso/app/modules/home/views/home_view.dart';
 import 'package:getx_demo_curso/app/modules/profile/bindings/profile_binding.dart';
 import 'package:getx_demo_curso/app/modules/profile/views/profile_view.dart';
+import 'package:getx_demo_curso/app/modules/reactive/bindings/reactive_binding.dart';
+import 'package:getx_demo_curso/app/modules/reactive/views/reactive_view.dart';
 import 'package:getx_demo_curso/app/modules/splash/bindings/splash_binding.dart';
 import 'package:getx_demo_curso/app/modules/splash/views/splash_view.dart';
 
@@ -12,7 +14,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.REACTIVE;
 
   static final routes = [
     GetPage(
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.REACTIVE,
+      page: () => ReactiveView(),
+      binding: ReactiveBinding(),
     ),
   ];
 }
